@@ -5,11 +5,11 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_firebase_auth/editName/editUserName.dart';
 import 'package:flutter_firebase_auth/screens/home.dart';
 import 'package:flutter_firebase_auth/screens/loading_screen.dart';
 import 'package:flutter_firebase_auth/screens/update_profile.dart';
 import 'package:flutter_firebase_auth/screens/user_profile.dart';
+import 'auth/forget_password.dart';
 import 'auth/login.dart';
 import 'auth/sign_up.dart';
 
@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
               "/home": (context) => Home(),
               "/sign-up": (context) => SignUp(),
               "/login": (context) => Login(),
+              "/forget-password": (context) => ForgetPassword(),
               "/user-profile": (context) => UserProfile(),
               "/update-profile": (context) => Update_Profile(),
               "/loading-screen": (context) => LoadingScreen(),

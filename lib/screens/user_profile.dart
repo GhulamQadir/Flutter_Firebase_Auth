@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_firebase_auth/auth/login.dart';
-import 'package:flutter_firebase_auth/editName/editUserName.dart';
 import 'package:flutter_firebase_auth/screens/home.dart';
 import 'package:flutter_firebase_auth/screens/update_profile.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../auth/login.dart';
 
 class UserProfile extends StatefulWidget {
   @override

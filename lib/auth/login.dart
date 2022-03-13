@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_auth/auth/forget_password.dart';
 
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -52,8 +53,6 @@ class _LoginState extends State<Login> {
       var firstName = names[0];
       var lastName = fullName.replaceAll(firstName, "");
 
-      // var lastName = names[1];
-
       db
           .collection('users')
           .where('email', isEqualTo: signCre.user.email)
@@ -68,14 +67,6 @@ class _LoginState extends State<Login> {
           });
         }
       });
-
-      // var signCre =
-      //     await FirebaseAuth.instance.signInWithCredential(credential);
-      // await db.collection("users").doc(signCre.user.uid).set({
-      //   "userName": googleUser.displayName,
-      //   "email": googleUser.email,
-      //   "image": googleUser.photoUrl
-      // });
 
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(builder: (context) => Home()), (route) => false);
@@ -135,6 +126,11 @@ class _LoginState extends State<Login> {
 
   goToHome() {
     Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+  }
+
+  goToForgetPassword() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => ForgetPassword()));
   }
 
   @override
@@ -277,6 +273,16 @@ class _LoginState extends State<Login> {
                                   ],
                                 ),
                               ),
+                            ),
+                            Text("or"),
+                            GestureDetector(
+                                onTap: goToForgetPassword,
+                                child: Text(
+                                  "Forget password?",
+                                  style: TextStyle(color: Colors.purple),
+                                )),
+                            SizedBox(
+                              height: 15,
                             ),
                             Center(
                               child: Container(

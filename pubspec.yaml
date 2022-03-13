@@ -45,6 +45,8 @@ dependencies:
 
   image_picker:
   flutter_spinkit:
+  cool_alert:
+
 
 dev_dependencies:
   flutter_test:
